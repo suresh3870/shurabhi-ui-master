@@ -6,6 +6,7 @@ import { CgShoppingCart } from "react-icons/cg";
 import axios from 'axios';
 import { string } from "yup/lib/locale";
 import { constants } from "fs";
+import AuthService from "../../services/auth.service";
 
 
 const order_url = 'http://localhost:9998/surabi/users/Order?city=Bangalore';
@@ -136,9 +137,9 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
   }
 
   function getOrder(){
-    //const currentUser = AuthService.getCurrentUser();
-    const currentUser='poda1'
-    return axios.post(order_url+'&user='+currentUser, [{"menuID": 1,"qty": 2}],{ headers: {
+    const currentUser = AuthService.getCurrentUser();
+    //const currentUser='poda1'
+    return axios.post(order_url+'&user='+currentUser.username, [{"menuID": 1,"qty": 2}],{ headers: {
       "Content-Type": "application/json",
     }}).then(response => response.data)
   }
