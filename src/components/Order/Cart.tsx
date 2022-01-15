@@ -173,7 +173,7 @@ async function axioscheckOutOrder(id:number) {
         console.log("Calling Checkout API...........");
         let bill= axioscheckOutOrder(orderId);
         bill.then(function(result2) {
-        alert(result2.data.response) 
+        alert(result2.data.response+" please Click on 'View Bill' menu to see details") 
         
       })
         
