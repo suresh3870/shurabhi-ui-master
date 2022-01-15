@@ -169,11 +169,6 @@ class App extends Component<Props, State> {
           {currentUser ? (
             <div className="navbar-nav ml-auto">
               <li className="nav-item">
-                <Link to={"/cart"} className="nav-link">
-                  Cart
-                </Link>
-              </li>
-              <li className="nav-item">
                 <Link to={"/profile"} className="nav-link">
                   {currentUser.username}
                 </Link>

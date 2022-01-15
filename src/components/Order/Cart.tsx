@@ -3,6 +3,12 @@ import ErrorModal from "./Modals/ErrorModal";
 import PurchaseModal from "./Modals/PurchaseModal";
 import styled from "styled-components";
 import { CgShoppingCart } from "react-icons/cg";
+import axios from 'axios';
+import { string } from "yup/lib/locale";
+import { constants } from "fs";
+
+const order_url = 'http://localhost:9998/surabi/users/Order?city=Bangalore';
+const checkout_url="http://localhost:9998/surabi/users/CheckOut?orderId="
 
 const Div = styled.div`
   width: 60%;
@@ -121,19 +127,57 @@ interface Items {
 const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
   const [empty, setEmpty] = useState(false);
   const [purchased, setPurchased] = useState(false);
+  const [msg, setMsg] = useState<any |string | undefined | null>("");
 
   const title = document.getElementById("title");
   if (title !== null) {
     title.innerHTML = "Odinzom | Cart";
   }
 
+  function getOrder(){
+    return axios.post(order_url, [{"menuID": 1,"qty": 2}],{ headers: {
+      "Content-Type": "application/json",
+    }}).then(response => response.data)
+  }
+  
+  async function axiosOrder() {
+    const payload = await getOrder();
+    return payload;
+}
+
+
+function checkOutOrder(id:number){
+  return axios.get(checkout_url+id).then(response => response)
+}
+
+async function axioscheckOutOrder(id:number) {
+  const payload = await checkOutOrder(id);
+  return payload;
+}
+
   const handlePurchase = () => {
     if (!cartItems.length) {
       setEmpty(true);
     } else {
+      console.log("Calling API order API...........");
+      let res= axiosOrder();
+      res.then(function(result) {
+        //console.log(result) 
+        alert(result);
+        var val= result;
+        var orderId = val.match(/\d+/g);;
+        console.log("Calling Checkout API...........");
+        let bill= axioscheckOutOrder(orderId);
+        bill.then(function(result2) {
+        alert(result2.data.response) 
+        
+      })
+        
+     })
       setPurchased(true);
       setCartItems([]);
     }
+    
   };
 
   const totalPrice = () => {
