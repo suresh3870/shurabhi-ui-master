@@ -214,7 +214,7 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
             </div>
           );
         })}
-        <p style={{ textAlign: "center" }}>Total Price: ${totalPrice()}</p>
+        <p style={{ textAlign: "center" }}>Total Price: {totalPrice()}</p>
         <div
           style={{
             display: "flex",

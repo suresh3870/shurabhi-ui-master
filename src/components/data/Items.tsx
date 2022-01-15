@@ -31,31 +31,31 @@ const Items: React.FC<CartItems> = ({ cartItems, setCartItems }) => {
     {
       name: "Dosa",
       src: Dosa,
-      price: 100,
+      price: 35,
       id: 1,
     },
     {
       name: "Rice",
       src: Rice,
-      price: 200,
+      price: 45,
       id: 2,
     },
     {
       name: "Roti",
       src: Roti,
-      price: 500,
+      price: 30,
       id: 3,
     },
     {
       name: "Jira Rice",
       src: JiraRice,
-      price: 400,
+      price: 60,
       id: 4,
     },
     {
       name: "Dal",
       src: Dal,
-      price: 1100,
+      price: 90,
       id: 5,
     },
   ];
