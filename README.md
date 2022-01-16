@@ -1,8 +1,8 @@
 ##### Week 15 Projects
 #### Back End
-###Run Micro service API
+### Run Micro service API
 
-#Create a postgres DB and tables ("shurabhi1"), using script in "SQL" file in the root path
+# Create a postgres DB and tables ("shurabhi1"), using script in "SQL" file in the root path
 
 ## Start APIs in below sequence
     1. shurabhi-server(eureka) -> http://localhost:8761/
@@ -24,7 +24,7 @@ Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 
-####UI
+#### UI
     ![Homepage UI](./images/Homepage.JPG)
     ![Menu UI](./images/Menu.JPG)
     ![Order UI](./images/Order.JPG)
