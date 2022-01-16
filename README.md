@@ -9,8 +9,7 @@
     2. auth-server -> http://localhost:9990/swagger-ui.html#/
     3. shurabhi-user -> http://localhost:9998/swagger-ui.html#/users-controller
     4. shurabhi-admin -> http://localhost:9999/swagger-ui.html#/admin-controller
-    
-
+    ![Eureka UI](./images/Eureka.JPG)
 #### Front End
 
 ## Available Scripts
@@ -24,3 +23,10 @@ In the project directory, you can run:
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
+
+####UI
+    ![Homepage UI](./images/Homepage.JPG)
+    ![Menu UI](./images/Menu.JPG)
+    ![Order UI](./images/Order.JPG)
+    ![Bill UI](./images/Bill.JPG)
+    ![Usermgt UI](./images/Usermgt.JPG)
