@@ -9,10 +9,11 @@
     2. auth-server -> http://localhost:9990/swagger-ui.html#/
     3. shurabhi-user -> http://localhost:9998/swagger-ui.html#/users-controller
     4. shurabhi-admin -> http://localhost:9999/swagger-ui.html#/admin-controller
+    
     ![Eureka UI](./images/Eureka.JPG)
-#### Front End
 
-## Available Scripts
+
+#### Front End
 
 In the project directory, you can run:
 
