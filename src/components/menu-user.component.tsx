@@ -60,9 +60,9 @@ export default class MenuList extends Component<Props, State> {
           <tbody>
           {products.map((item)=>
         <tr>
-       <th style={{textAlign:"center"}}>{item["menuId"]} </th>
-       <th style={{textAlign:"center"}}>{item["item"]} </th>
-       <th style={{textAlign:"center"}}>{item["price"]} </th>
+       <td style={{textAlign:"center"}}>{item["menuId"]} </td>
+       <td style={{textAlign:"center"}}>{item["item"]} </td>
+       <td style={{textAlign:"center"}}>{item["price"]} </td>
        </tr>
        )}              
           </tbody>

@@ -137,13 +137,13 @@ class EditCustomer extends React.Component<RouteComponentProps<any>, IFormState>
                                     </div>
                                     <div className="form-group col-md-12">
                                         <label htmlFor="password"> password </label>
-                                        <input type="text" id="password" defaultValue="" onChange={(evt) => this.handleInputChangespassword(evt)} name="password" className="form-control" placeholder="Enter User password" />
+                                        <input type="text" id="password" defaultValue="minimum 6 char" onChange={(evt) => this.handleInputChangespassword(evt)} name="password" className="form-control" placeholder="Enter User password" />
                                     </div>
 
 
                                     <div className="form-group col-md-12">
                                         <label htmlFor="email"> Email </label>
-                                        <input type="email" id="email" defaultValue="" onChange={(e) => this.handleInputChangesemail(e)} name="email" className="form-control" placeholder="Enter users's email address" />
+                                        <input type="email" id="email" defaultValue="unique email address" onChange={(e) => this.handleInputChangesemail(e)} name="email" className="form-control" placeholder="Enter users's email address" />
                                     </div>
 
                                     <div className="form-group col-md-12">
