@@ -139,7 +139,10 @@ const Cart: React.FC<Items> = ({ cartItems, setCartItems }) => {
   function getOrder(){
     const currentUser = AuthService.getCurrentUser();
     //const currentUser='poda1'
-    return axios.post(order_url+'&user='+currentUser.username, [{"menuID": 1,"qty": 2}],{ headers: {
+    var result = cartItems.map(item => ({ menuID: item.id, qty: item.quantity }));
+      var jsonString = JSON.stringify(result);
+      console.log(jsonString);
+    return axios.post(order_url+'&user='+currentUser.username, jsonString,{ headers: {
       "Content-Type": "application/json",
     }}).then(response => response.data)
   }
@@ -163,6 +166,8 @@ async function axioscheckOutOrder(id:number) {
     if (!cartItems.length) {
       setEmpty(true);
     } else {
+
+      
       console.log("Calling API order API...........");
       let res= axiosOrder();
       res.then(function(result) {
